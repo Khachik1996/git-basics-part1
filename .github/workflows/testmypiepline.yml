@@ -23,7 +23,7 @@ jobs:
         run : |
           echo "Hello Message1"
           echo "Hello Message2"
-          echo "Printing Global ENV variable ${{ env.DEPLOY-PACKAGE-NAME }}
+          echo "Printing Global ENV variable ${{ env.DEPLOY-PACKAGE-NAME }}"
 
       - name: Git clone my repo
         uses: actions/checkout@v1
