@@ -21,6 +21,10 @@ jobs:
         run : |
           echo "Hello Message1"
           echo "Hello Message2"
+
+      - name: Git clone my repo
+        uses: actions/checkout@v1
+          
       
 
   my_deploy:
