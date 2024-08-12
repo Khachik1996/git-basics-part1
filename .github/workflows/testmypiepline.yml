@@ -48,7 +48,7 @@ jobs:
         run: ls -la
 
       - name: print some more info
-        run: echo " {{ env.VAR1 }}
+        run: echo " {{ env.VAR1 }}"
         
 
   
