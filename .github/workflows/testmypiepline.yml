@@ -2,7 +2,9 @@
 # Github Action part 1 _basics
 
 name: My-Githubactionbasics
-
+env:
+  APPLICATION_NAME: "MyFlaskApp"
+  DEPLOY-PACKAGE-NAME: "flask-app-ver-$"{{github.sha }}"
 on:
   push:
     branches: 
@@ -21,6 +23,7 @@ jobs:
         run : |
           echo "Hello Message1"
           echo "Hello Message2"
+          echo "Printing Global ENV variable ${{ env. DEPLOY-PACKAGE-NAME }}
 
       - name: Git clone my repo
         uses: actions/checkout@v1
@@ -30,6 +33,10 @@ jobs:
   my_deploy:
     runs-on: [ubuntu-latest]
     needs: [my_testing]
+    env: 
+      VAR1 : "Job Variable 1"
+      VAR2 : "Job Variable 2"
+      
     
 
 
@@ -39,6 +46,9 @@ jobs:
 
       - name: List current folder
         run: ls -la
+
+      - name: print some more info
+        run: echo " {{ env.VAR1 }}
         
 
   
