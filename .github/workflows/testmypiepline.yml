@@ -49,6 +49,11 @@ jobs:
 
       - name: print some more info
         run: echo "{{ env.VAR1 }}"
+
+      - name: Check if command exists
+        run : aws --version
+      - name: Check if ZIP exists
+        run: zip --version
         
 
   
